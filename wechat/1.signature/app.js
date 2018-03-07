@@ -1,9 +1,6 @@
-/*
 var express = require('express');  //express 框架 
 var crypto = require('crypto');    //引入加密模块 
 var config = require('./config');  //引入配置文件
-
-
 
 //实例 express
 var app = express();
@@ -35,19 +32,5 @@ app.get('/',function(req,res){
 
 //监听3000端口
 app.listen(3000);
-*/
 
-const express = require('express'), //express 框架 
-       crypto = require('crypto'),  //引入加密模块
-       config = require('./config');//引入配置文件
-
-//实例 express
-var app = express();
-//用于处理所有进入 3000 端口 get 的连接请求
-app.get('/',function(req,res){
-    //对请求连接返回内容
-    res.send("Hello Node.js");
-});
-//监听3000端口
-app.listen(8080);
 
