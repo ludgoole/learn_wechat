@@ -5,8 +5,11 @@ var config = require('./config');  //引入配置文件
 //实例 express
 var app = express();
 
-//用于处理所有进入 3000 端口 get 的连接请求
+//用于处理所有进入80端口 get 的连接请求
 app.get('/',function(req,res){
+    //对请求连接返回内容
+    res.send("Hello Node.js");
+
     //1.获取微信服务器Get请求的参数 signature、timestamp、nonce、echostr
     var signature = req.query.signature;  //微信加密签名
     var timestamp = req.query.timestamp;  //时间戳
@@ -30,7 +33,5 @@ app.get('/',function(req,res){
     }
 });
 
-//监听3000端口
-app.listen(3000);
-
-
+//监听80端口
+app.listen(80);
